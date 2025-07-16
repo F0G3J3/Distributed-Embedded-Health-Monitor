@@ -1,7 +1,0 @@
-cd path/to/Distributed-Embedded-Health-Monitor
-git init
-git add .
-git commit -m "Initial commit: Set up Distributed Embedded Health Monitor project structure"
-git branch -M main
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/Distributed-Embedded-Health-Monitor.git
-git push -u origin main
