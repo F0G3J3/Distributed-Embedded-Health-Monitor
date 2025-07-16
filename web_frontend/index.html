@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEHM Dashboard - Dr.exnon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Distributed Embedded Health Monitor</h1>
+        <p>Real-time insights into your ESP32 devices</p>
+    </header>
+
+    <main class="container">
+        <section class="device-selection-section card">
+            <h2>Select Device</h2>
+            <select id="deviceSelector">
+                <option value="">Loading devices...</option>
+            </select>
+        </section>
+
+        <section class="latest-data-section card">
+            <h2>Latest Health Metrics</h2>
+            <div id="latestMetrics" class="metrics-grid">
+                <div class="metric-item">
+                    <h3>CPU Usage</h3>
+                    <p id="latestCpuUsage">-- %</p>
+                </div>
+                <div class="metric-item">
+                    <h3>Free Heap</h3>
+                    <p id="latestHeapFree">-- Bytes</p>
+                </div>
+                <div class="metric-item">
+                    <h3>Min Free Heap</h3>
+                    <p id="latestMinHeapFree">-- Bytes</p>
+                </div>
+                <div class="metric-item">
+                    <h3>Task Count</h3>
+                    <p id="latestTaskCount">--</p>
+                </div>
+                <div class="metric-item">
+                    <h3>Stack HWM</h3>
+                    <p id="latestStackHWM">-- Bytes</p>
+                </div>
+                <div class="metric-item">
+                    <h3>Last Update</h3>
+                    <p id="latestTimestamp">--</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="historical-data-section card">
+            <h2>Historical Data</h2>
+            <div class="chart-container">
+                <canvas id="cpuChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="heapChart"></canvas>
+            </div>
+
+            <h3>Raw Data Log</h3>
+            <table id="rawDataLog">
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>CPU (%)</th>
+                        <th>Heap Free (B)</th>
+                        <th>Min Heap (B)</th>
+                        <th>Tasks</th>
+                        <th>Stack HWM (B)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+            <button id="loadMoreBtn" class="btn">Load More</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DEHM. Built by Dr.exnon.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
