@@ -24,27 +24,26 @@ This project demonstrates a robust architecture separating embedded firmware, ba
 
 ## 📂 Project Structure
 
-The project is divided into logical components for clarity and modularity:
+The project is thoughtfully organized into modular components for clarity and scalability. Below is a detailed breakdown of the main directories and files:
 
-Distributed-Embedded-Health-Monitor/
-├── esp32_firmware/           # ESP32 C++ firmware code
-│   ├── src/
-│   │   └── main.cpp          # Main firmware application
-│   └── platformio.ini        # PlatformIO project configuration
-├── python_backend/           # Python Flask backend server
-│   ├── app.py                # Flask application, API endpoints, and OTA server
-│   ├── database.py           # SQLAlchemy database models and setup
-│   ├── requirements.txt      # Python dependencies
-│   └── data/                 # Directory for SQLite database file
-│       └── health_monitor.db
-├── web_frontend/             # Web-based user interface
-│   ├── index.html            # Main dashboard HTML
-│   ├── css/
-│   │   └── style.css         # CSS stylesheets for UI
-│   └── js/
-│       └── script.js         # JavaScript for data fetching, charts, and interactivity
-├── README.md                 # This file
-└── INSTALL.md                # Detailed installation and setup guide
+| Path                        | Type   | Description                                                                 |
+| :-------------------------- | :----- | :-------------------------------------------------------------------------- |
+| `Distributed-Embedded-Health-Monitor/` | Folder | Root directory of the entire project.                                       |
+| ├── `esp32_firmware/`       | Folder | Contains the C++ firmware code for ESP32 devices.                           |
+| │   ├── `src/main.cpp`      | File   | Main ESP32 application logic: collects metrics, handles WiFi, sends data via HTTP POST. |
+| │   └── `platformio.ini`    | File   | PlatformIO project configuration: defines board, framework, and libraries.  |
+| ├── `python_backend/`       | Folder | Houses the Flask backend server.                                            |
+| │   ├── `app.py`            | File   | Flask application: defines API endpoints, serves the frontend, and manages OTA firmware updates. |
+| │   ├── `database.py`       | File   | SQLAlchemy models: defines the database schema for storing health metrics.  |
+| │   ├── `requirements.txt`  | File   | Lists all necessary Python package dependencies (e.g., Flask, SQLAlchemy). |
+| │   └── `data/`             | Folder | Directory for persistent data storage.                                      |
+| │       └── `health_monitor.db` | File   | SQLite database file: automatically created upon first backend run.         |
+| ├── `web_frontend/`         | Folder | Contains the web-based dashboard user interface.                            |
+| │   ├── `index.html`        | File   | Main HTML page structure for the dashboard.                                 |
+| │   ├── `css/style.css`     | File   | CSS stylesheets for dashboard visual appeal and layout.                     |
+| │   └── `js/script.js`      | File   | JavaScript logic: handles data fetching from backend, updates UI, and manages charts. |
+| ├── `INSTALL.md`            | File   | Detailed, step-by-step installation and setup guide.                        |
+| └── `README.md`             | File   | Project overview, key features, and high-level instructions (this file).    |
 
 ---
 
